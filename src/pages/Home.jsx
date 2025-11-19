@@ -125,11 +125,46 @@ const summaryCards = [
     },
 ];
 const contactItems = [
-    { id: 'contact-tele', label: 'Telegram', value: 'Nhấn vào đây', icon: '/images/tele-icon.png', link: '#' },
-    { id: 'contact-fb', label: 'Facebook chính chủ', value: 'Nhấn vào đây', icon: '/images/fb-icon.png', link: '#' },
-    { id: 'contact-link-page', label: 'Link page chính chủ', value: 'Nhấn vào đây', icon: '/images/world.png', link: '#' },
-    { id: 'contact-support', label: 'Tư vấn gỡ nợ', value: 'Nhấn vào đây', icon: '/images/telephone.png', link: '#' },
-    { id: 'contact-hotline', label: 'Hotline', value: '0797 595 555', icon: '/images/hotline.png', link: 'tel:0797595555' }
+    {
+        id: 'contact-tele',
+        label: 'Telegram',
+        value: 'Nhấn vào đây',
+        icon: '/images/tele-icon.png',
+        link: 'https://t.me/HOANGTUNGTIN',
+        external: true
+    },
+    {
+        id: 'contact-fb',
+        label: 'Facebook chính chủ',
+        value: 'Nhấn vào đây',
+        icon: '/images/fb-icon.png',
+        link: 'https://zmrtu.vip8rr88.com',
+        external: true
+    },
+    {
+        id: 'contact-link-page',
+        label: 'Link page chính chủ',
+        value: 'Nhấn vào đây',
+        icon: '/images/world.png',
+        link: 'https://zmrtu.vip8rr88.com',
+        external: true
+    },
+    {
+        id: 'contact-support',
+        label: 'Tư vấn gỡ nợ',
+        value: 'Nhấn vào đây',
+        icon: '/images/telephone.png',
+        link: 'tel:0797595555',
+        external: false
+    },
+    {
+        id: 'contact-hotline',
+        label: 'Hotline',
+        value: '0797 595 555',
+        icon: '/images/hotline.png',
+        link: 'tel:0797595555',
+        external: false
+    }
 ];
 
 const Home = () => {
@@ -160,39 +195,47 @@ const Home = () => {
 
     return (
         <Layout>
+            <div className="space-y-10 md:space-y-12">
                 <div className="w-full">
                     <img
                         src="/images/banner-ht.png"
                         alt="Banner"
-                        className="w-full h-auto mt-[-1rem] mb-[-3rem]"
+                        className="w-full h-auto md:mt-[-1rem] md:mb-[-3rem]"
                     />
                 </div>
 
-                <div className="w-full">
-                    <div className="flex justify-center">
-                        <img
-                            src="/images/btn-link-regis.png"
-                            alt="Link đăng ký"
-                            className="block w-auto h-auto max-w-[425px]"
-                        />
+                <div className="w-full space-y-6">
+                    <div className="flex justify-center px-4">
+                        <a
+                            href="https://zmrtu.vip8rr88.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-block w-full max-w-[425px]"
+                        >
+                            <img
+                                src="/images/btn-link-regis.png"
+                                alt="Link đăng ký"
+                                className="block w-full h-auto"
+                            />
+                        </a>
                     </div>
 
-                    <div className="flex justify-center">
+                    <div className="flex justify-center px-4">
                         <img
                             src="/images/contact-boss.png"
                             alt="Liên hệ Boss"
-                            className="block w-auto h-auto max-w-[385px] mb-[4rem]"
+                            className="block w-full max-w-[385px] h-auto mb-4"
                         />
                     </div>
                 </div>
 
-                <div className="w-full mt-6 flex justify-center relative">
+                <div className="w-full mt-6 flex justify-center relative px-4">
                     <img
                         src="/images/border-imgs.png"
                         alt="Border highlight"
-                        className="absolute -top-6 w-auto max-w-[380px] pointer-events-none"
+                        className="absolute -top-0 md:-top-2 w-60 sm:w-60 md:w-80 pointer-events-none"
                     />
-                    <div className="w-full max-w-[640px] h-[1120px] rounded-2xl border-[10px] border-[#00baff] overflow-hidden shadow-lg bg-black mt-3.5">
+                    <div className="w-full max-w-[640px] rounded-2xl border-[4px] sm:border-[6px] border-[#00baff] overflow-hidden shadow-lg bg-black mt-6 aspect-[9/16]">
                         <iframe
                             src="https://player.vimeo.com/video/1137998604?autoplay=1&loop=1&muted=1&background=0"
                             className="w-full h-full"
@@ -203,32 +246,28 @@ const Home = () => {
                         />
                     </div>
                 </div>
-                <div className="flex justify-center">
+                <div className="flex justify-center px-4">
                     <img
                         src="/images/baccarat.png"
                         alt="Baccarat"
-                        className="block w-auto h-auto max-w-[360px]"
+                        className="block w-full max-w-[360px] h-auto"
                     />
                 </div>
                 <section className="w-full">
-                    <div className="grid gap-8 md:grid-cols-3">
+                    <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
                         {bossCards.map((boss) => (
                             <div key={boss.id} className="relative pb-12">
-                                <div className={` w-[483px] h-[650px] rounded-[28px] p-[3px] bg-gradient-to-b ${boss.gradient}` }>
-                                    <div className="bg-[#050a25] rounded-[25px] flex flex-col items-center text-center px-6 pt-8 pb-12 gap-4 h-full">
-                                        <p className="text-3xl font-semibold text-[#ffff00] uppercase tracking-wide">
+                                <div className={`mx-auto w-full max-w-[483px] min-h-[560px] rounded-[28px] p-[3px] bg-gradient-to-b ${boss.gradient}`}>
+                                    <div className="bg-[#050a25] rounded-[25px] flex flex-col items-center text-center px-5 sm:px-6 pt-8 pb-16 gap-4 h-full">
+                                        <p className="text-2xl sm:text-3xl font-semibold text-[#ffff00] uppercase tracking-wide">
                                             {boss.name}
                                         </p>
-                                        <div className="w-[335px] h-[335px] rounded-full border-4 border-[#fbd46d] overflow-hidden">
-                                          <img
-                                              src={
-                                                  boss.id === 'tro-ly-kieu-linh'
-                                                      ? '/images/tro-ly-tong.png'
-                                                      : boss.avatar
-                                              }
-                                              alt={boss.name}
-                                              className="w-full h-full object-cover"
-                                          />
+                                        <div className="w-44 h-44 sm:w-60 sm:h-60 md:w-[335px] md:h-[335px] rounded-full border-4 border-[#fbd46d] overflow-hidden">
+                                            <img
+                                                src={boss.id === 'tro-ly-kieu-linh' ? '/images/tro-ly-tong.png' : boss.avatar}
+                                                alt={boss.name}
+                                                className="w-full h-full object-cover"
+                                            />
                                         </div>
                                         <div className="flex justify-center">
                                             <img
@@ -240,35 +279,35 @@ const Home = () => {
                                                         : '/images/3-star.png'
                                                 }
                                                 alt="Đánh giá"
-                                                className="w-auto h-[60px]"
+                                                className="w-32 sm:w-auto h-12 sm:h-[60px]"
                                             />
                                         </div>
-                                        <p className="text-[#ffff00] text-3xl font-bold uppercase">{boss.mainRole}</p>
-                                        <p className="text-white text-[24.78px] font-semibold leading-relaxed">{boss.subRole}</p>
+                                        <p className="text-[#ffff00] text-2xl sm:text-3xl font-bold uppercase">{boss.mainRole}</p>
+                                        <p className="text-white text-lg sm:text-2xl font-semibold leading-relaxed">{boss.subRole}</p>
                                     </div>
-                                    <div
-                                        className={`absolute left-1/2 -translate-x-1/2 ${
-                                            boss.id === 'boss-hoang-tung' ? 'bottom-[23px]' : 'bottom-[23px]'
-                                        }`}
-                                    >
-                                        <img
-                                            src={boss.button}
-                                            alt="Liên hệ"
-                                            className="w-[296px] h-auto drop-shadow-[0_8px_16px_rgba(0,0,0,0.5)]"
-                                        />
+                                    <div className="absolute left-1/2 -translate-x-1/2 bottom-4 sm:bottom-6  sm:mb-[0.3rem]">
+                                        <a
+                                            href={boss.id === 'boss-hoang-tung' ? 'https://t.me/HOANGTUNGTIN' : 'https://t.me/+ibu-_HhX-Xw5NmY1'}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
+                                            <img
+                                                src={boss.button}
+                                                alt="Liên hệ"
+                                                className="w-56 sm:w-[296px] h-auto drop-shadow-[0_8px_16px_rgba(0,0,0,0.5)]"
+                                            />
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </section>
-                <section className="w-9/12 mx-auto space-y-8">
+                <section className="w-full max-w-5xl mx-auto space-y-8 px-2">
                     {infoSections.map((section) => (
                         <div
                             key={section.id}
-                            className={`flex flex-col gap-6 md:gap-10 md:flex-row ${
-                                section.reverse ? 'md:flex-row-reverse' : ''
-                            }`}
+                            className={`flex flex-col gap-6 md:gap-10 md:flex-row ${section.reverse ? 'md:flex-row-reverse' : ''}`}
                         >
                             <div className="md:w-1/2 flex justify-center">
                                 <img
@@ -277,25 +316,25 @@ const Home = () => {
                                     className="w-full max-w-[520px]"
                                 />
                             </div>
-                            <div className="md:w-1/2 flex items-center justify-center">
+                            <div className="md:w-1/2 flex items-center justify-center px-1 sm:px-0">
                                 <div className="bg-gradient-to-br from-[#0e1a3c] via-[#070d21] to-[#030712] rounded-[28px] p-[3px] w-full max-w-[520px]">
-                                    <div className="rounded-[25px] bg-gradient-to-br from-[#1b274a] via-[#202a54] to-[#233e6e] p-6 md:p-8 !pt-0 flex flex-col gap-4 border border-[#15bffd]">
+                                    <div className="rounded-[25px] bg-gradient-to-br from-[#1b274a] via-[#202a54] to-[#233e6e] p-5 sm:p-8 !pt-0 flex flex-col gap-4 border-2 border-[#15bffd]">
                                         <div className="relative flex justify-center">
-                                            <div className="absolute top-[-2.5rem] w-auto max-w-[380px] pointer-events-none">
+                                            <div className="absolute -top-8 sm:-top-10 lg:-top-[2.16rem] w-56 sm:w-72 md:w-80 pointer-events-none">
                                                 <img
                                                     src="/images/border-imgs.png"
                                                     alt="Border highlight"
                                                     className="w-full h-auto"
                                                 />
                                                 <div className="absolute inset-0 flex items-center justify-center">
-                                                    <span className="text-[#383838] text-l font-bold drop-shadow-md">
+                                                    <span className="text-[#383838] text-xs sm:text-sm font-bold drop-shadow-md text-center px-2">
                                                         {section.label?.toUpperCase() || 'HOÀNG TÙNG BCR - CHUYÊN KÉO 1-1'}
                                                     </span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <h3 className="text-3xl font-extrabold text-[#15bffd] uppercase flex justify-center">{section.title}</h3>
-                                        <div className="space-y-3 text-slate-200 text-sm leading-relaxed">
+                                        <h3 className="text-2xl sm:text-3xl font-extrabold text-[#15bffd] uppercase text-center">{section.title}</h3>
+                                        <div className="space-y-3 text-slate-200 text-sm sm:text-base leading-relaxed">
                                             {section.paragraphs.map((text, idx) => (
                                                 <p key={idx}>{text}</p>
                                             ))}
@@ -308,27 +347,33 @@ const Home = () => {
                                                 </li>
                                             ))}
                                         </ul>
-                                            {section.cardImage && (
-                                                <div className="flex justify-center">
+                                        {section.cardImage && (
+                                            <div className="flex justify-center">
+                                                <a
+                                                    href="https://t.me/+ibu-_HhX-Xw5NmY1"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
                                                     <img
                                                         src={section.cardImage}
                                                         alt={section.title}
                                                         className="w-full max-w-sm rounded-2xl"
                                                     />
-                                                </div>
-                                            )}
+                                                </a>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </section>
-                <div className="w-8/12 mx-auto rounded-[28px] bg-gradient-to-br from-[#1c3d86] via-[#0b1a43] to-[#050c1d] p-[2px]">
-                    <div className="rounded-[26px] bg-[#040a1c] px-8 py-6 text-center space-y-3">
-                        <p className="text-xl font-extrabold text-white tracking-wide uppercase">
+                <div className="w-full max-w-3xl mx-auto rounded-[28px] bg-gradient-to-br from-[#1c3d86] via-[#0b1a43] to-[#050c1d] p-[2px] px-4">
+                    <div className="rounded-[26px] bg-[#040a1c] px-6 py-6 text-center space-y-3">
+                        <p className="text-lg sm:text-xl font-extrabold text-white tracking-wide uppercase">
                             Tư vấn gỡ nợ quản lý tài chính
                         </p>
-                        <span className="inline-block px-6 py-2 rounded-full bg-gradient-to-r from-[#3bc2ff] to-[#0a7de6] text-white text-sm font-semibold uppercase tracking-wider">
+                        <span className="inline-block px-6 py-2 rounded-full bg-gradient-to-r from-[#3bc2ff] to-[#0a7de6] text-white text-xs sm:text-sm font-semibold uppercase tracking-wider">
                             Trợ lý Kiều Linh
                         </span>
                         <p className="text-slate-200 text-sm leading-relaxed">
@@ -337,14 +382,19 @@ const Home = () => {
                     </div>
                 </div>
                 <div className="w-full flex justify-center">
-                    <div className="relative inline-flex flex-col items-center">
-                        <div className="absolute -top-2 left-0 right-0 h-6 border-t-2 border-x-2 border-[#f6d463] rounded-t-full" />
-                        <div className="text-[#ffdc7a] font-bold text-[22px] ">
+                    <div className="relative inline-flex flex-col items-center text-center">
+                        <img
+                            src="/images/arrow-btn.png"
+                            alt="Arrow Button"
+                            className="absolute -top-2 left-0 right-0 h-6 mx-auto lg:-mr-4 lg:min-w-[300px] lg:h-auto  "
+                            style={{ maxWidth: '120px' }}
+                        />
+                        <div className="text-[#ffdc7a] font-bold text-lg sm:text-[22px] pt-2">
                             Hoàng Tùng hệ thống VIP
                         </div>
                     </div>
                 </div>
-                <div className="grid gap-6 md:grid-cols-3">
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {showcaseImages.map((src, index) => (
                         <div key={index} className="overflow-hidden rounded-[28px]">
                             <img
@@ -355,18 +405,18 @@ const Home = () => {
                         </div>
                     ))}
                 </div>
-                <div className="w-4/12 mx-auto text-center space-y-4">
+                <div className="w-full max-w-md mx-auto text-center space-y-4 px-4">
                     <img
                         src="/images/vip.png"
                         alt="Hoàng Tùng VIP"
-                        className="mx-auto w-[337px] max-w-4xl h-auto"
+                        className="mx-auto w-full max-w-[337px] h-auto"
                     />
-                    <p className="text-2xl font-extrabold uppercase text-[#f6d463] tracking-wide">
+                    <p className="text-xl sm:text-2xl font-extrabold uppercase text-[#f6d463] tracking-wide">
                         Quyền lợi VIP Hoàng Tùng
                     </p>
                 </div>
-                <div className="w-6/12 mx-auto rounded-[30px] bg-gradient-to-br from-[#f6d463] via-[#f0b143] to-[#d58222] p-[2px]">
-                    <div className="rounded-[28px] bg-[#0a0f2c] p-6 space-y-4">
+                <div className="w-full max-w-3xl mx-auto rounded-[30px] bg-gradient-to-br from-[#f6d463] via-[#f0b143] to-[#d58222] p-[2px] px-4">
+                    <div className="rounded-[28px] bg-[#0a0f2c] p-4 sm:p-6 space-y-4">
                         {[
                             'Hỗ trợ trực tiếp bởi admin cao thủ - giải đáp thắc mắc',
                             'Thường xuyên tổ chức mini game - event sự kiện dành riêng cho VIP cộng đồng vững mạnh - chia sẻ kinh nghiệm - hỗ trợ 24/07'
@@ -381,44 +431,46 @@ const Home = () => {
                         ))}
                     </div>
                 </div>
-                <div className="grid gap-8 md:grid-cols-3">
+                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                     {successItems.map((item) => (
                         <div key={item.id} className="rounded-[28px] p-[3px] bg-gradient-to-b from-[#1b3596] via-[#0b1c4d] to-[#04091c]">
-                            <div className="h-full rounded-[25px] bg-[#050b20] px-6 py-8 flex flex-col items-center text-center gap-4">
-                                <img src="/images/five-star.png" alt="Five stars" className="w-auto h-[57px]" />
+                            <div className="h-full rounded-[25px] bg-[#050b20] px-5 py-8 flex flex-col items-center text-center gap-4">
+                                <img src="/images/five-star.png" alt="Five stars" className="w-32 h-auto" />
                                 <p className="text-sm text-slate-200 leading-relaxed">{item.description}</p>
                                 <div className="w-full">
-                                    <img src={item.image} alt={item.title} className="w-[155px] mx-auto h-full object-cover" />
+                                    <img src={item.image} alt={item.title} className="w-32 sm:w-[155px] mx-auto h-full object-cover" />
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
-                <section className="w-8/12 mx-auto grid gap-8 items-center">
-                    <div className="rounded-[28px]  p-[3px] space-y-5">
-                        <div className="rounded-[25px]px-8 py-6 space-y-4">
+                <section className="w-full max-w-4xl mx-auto grid gap-8 items-center px-4">
+                    <div className="rounded-[28px] p-[3px] space-y-5">
+                        <div className="rounded-[25px] px-4 sm:px-8 py-6">
                             <div className="flex justify-center">
-                                <img src="/images/arrow-big-btn.png" alt="Liên hệ" className="w-full h-auto" />
+                                <img src="/images/arrow-big-btn.png" alt="Liên hệ" className="w-full lg:max-w-l h-auto" />
                             </div>
-                            <p className="text-[50px] font-extrabold text-center uppercase text-white tracking-wide !mt-[-10rem]">
+                            <p className="text-3xl md:text-[50px] font-extrabold text-center uppercase text-white tracking-wide -mt-10 md:-mt-28 md:mb-8">
                                 THÔNG TIN LIÊN HỆ
                             </p>
-                            <div className="space-y-3 max-w-[80%] mx-auto border border-blue-400 rounded-xl p-6">
+                            <div className="space-y-3 w-[80%] mx-auto border border-blue-400 rounded-xl p-4 sm:p-6">
                                 {contactItems.map((item) => (
                                     <a
                                         key={item.id}
                                         href={item.link}
-                                        className="flex items-center justify-between rounded-full bg-[#0d1535] px-5 py-3 border border-[#1b2f7f]/60 shadow-inner shadow-black/30 hover:bg-[#12204b] transition"
+                                        target={item.external ? '_blank' : undefined}
+                                        rel={item.external ? 'noopener noreferrer' : undefined}
+                                        className="flex flex-wrap items-center justify-between gap-3 rounded-full bg-[#0d1535] px-4 py-3 border border-[#1b2f7f]/60 shadow-inner shadow-black/30 hover:bg-[#12204b] transition"
                                     >
                                         <div className="flex items-center gap-3">
-                                            <span className=" flex items-center justify-center">
-                                                <img src={item.icon} alt={item.label} className="w-12 h-auto" />
+                                            <span className="flex items-center justify-center">
+                                                <img src={item.icon} alt={item.label} className="w-10 sm:w-12 h-auto" />
                                             </span>
-                                            <span className="text-sm font-semibold uppercase text-slate-200">
+                                            <span className="text-xs sm:text-sm font-semibold uppercase text-slate-200">
                                                 {item.label}
                                             </span>
                                         </div>
-                                        <span className="text-sm font-bold uppercase text-[#4cd6ff]">{item.value}</span>
+                                        <span className="text-xs sm:text-sm font-bold uppercase text-[#4cd6ff]">{item.value}</span>
                                     </a>
                                 ))}
                             </div>
@@ -426,14 +478,11 @@ const Home = () => {
                     </div>
                 </section>
                 <section className="w-full">
-                    <div className="grid gap-6 md:grid-cols-3">
+                    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                         {displayedSummaryCards.map((card) => (
-                            <div
-                                key={card.id}
-                                className=""
-                            >
-                                <div className="rounded-[25px]h-full flex flex-col gap-4 text-center items-center">
-                                    <div className="w-full overflow-hidden">
+                            <div key={card.id}>
+                                <div className="rounded-[25px] h-full flex flex-col gap-4 text-center items-center bg-[#050a25]/40 p-4">
+                                    <div className="w-full overflow-hidden rounded-2xl border border-white/5">
                                         {card.image ? (
                                             <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
                                         ) : (
@@ -442,7 +491,7 @@ const Home = () => {
                                             </div>
                                         )}
                                     </div>
-                                    <p className="text-lg font-bold text-white uppercase tracking-wide">{card.title}</p>
+                                    <p className="text-base sm:text-lg font-bold text-white uppercase tracking-wide">{card.title}</p>
                                     <p className="text-sm text-slate-200 leading-relaxed line-clamp-3 overflow-hidden">
                                         {card.description}
                                     </p>
@@ -499,6 +548,7 @@ const Home = () => {
                         </button>
                     </nav>
                 </div>
+            </div>
         </Layout>
     );
 };
